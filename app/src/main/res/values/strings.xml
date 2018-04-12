@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Blood_Donation</string>
+    <string-array name="bloods">
+        <item>Blood Group</item>
+        <item>A+</item>
+        <item>A-</item>
+        <item>B+</item>
+        <item>B-</item>
+        <item>O+</item>
+        <item>O-</item>
+        <item>AB+</item>
+        <item>AB-</item>
+    </string-array>
+    <string-array name="cities">
+        <item>Select City</item>
+        <item>Lahore</item>
+        <item>Islamabad</item>
+        <item>Karachi</item>
+        <item>Khushab</item>
+        <item>Sargodha</item>
+        <item>Peshawar</item>
+        <item>Queta</item>
+    </string-array>
+
+    <string name="facebook_app_id">408553332904290</string>
+    <string name="fb_login_protocol_scheme">fb408553332904290</string>
+    <string name="setting_name">Logout</string>
+    <string name="title_activity_landing">LandingActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+</resources>

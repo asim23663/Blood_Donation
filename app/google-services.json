@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "140064611741-bdh206fdrl52e7l0h1f6ef65sgikau76.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.asimyamin.blood_donation",
+            "certificate_hash": "8ad71f04345ec813e770bea28d67fe76688cfc1a"
+          }
+        },
+        {
           "client_id": "140064611741-2mpmgte4lncg5hlsm44a6b9c3u94o8r9.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

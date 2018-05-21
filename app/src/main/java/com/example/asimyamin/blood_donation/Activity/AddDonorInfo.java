@@ -17,6 +17,8 @@ import com.example.asimyamin.blood_donation.R;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Objects;
+
 public class AddDonorInfo extends AppCompatActivity {
 
     Spinner spBlood,spCities;
@@ -33,15 +35,20 @@ public class AddDonorInfo extends AppCompatActivity {
 
         submit=findViewById(R.id.btnSubmit);
 
+
         toolbar=findViewById(R.id.addDonorToolBar);
         setSupportActionBar(toolbar);
         toolbar.setTitle("Add Donor Info");
+        toolbar.setSubtitle("Submit Correct Information");
+
+
         toolbar.setNavigationIcon(R.drawable.back_black_24dp);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent backIntent=new Intent(AddDonorInfo.this,Sign_In.class);
-                startActivity(backIntent);
+                Toast.makeText(AddDonorInfo.this,"Back",Toast.LENGTH_SHORT).show();
+                /*Intent backIntent=new Intent(AddDonorInfo.this,Sign_In.class);
+                startActivity(backIntent);*/
             }
         });
 

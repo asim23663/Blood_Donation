@@ -7,7 +7,7 @@ import android.widget.Toast;
 
 import com.example.asimyamin.blood_donation.R;
 
-public class Splash_Sccreen extends AppCompatActivity {
+public class Splash_Screen extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,11 +19,11 @@ public class Splash_Sccreen extends AppCompatActivity {
             public void run() {
                 try {
                     sleep(5000);
-                    startActivity(new Intent(Splash_Sccreen.this,MainActivity.class));
+                    startActivity(new Intent(Splash_Screen.this,MainActivity.class));
                     finish();
 
                 } catch (InterruptedException e) {
-                    Toast.makeText(Splash_Sccreen.this,"Unkown error is occured!!",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Splash_Screen.this,"Unkown error is occured!!",Toast.LENGTH_SHORT).show();
                 }
 
             }

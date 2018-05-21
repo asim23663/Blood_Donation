@@ -38,8 +38,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private final int RC_LOGIN=123;
     private FirebaseAuth auth;
 
+    LoginButton fbLogin;
     private CallbackManager cbManager;
 
+    private static final String EMAIL="email";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +50,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         logIn=findViewById(R.id.logIn);
         error=findViewById(R.id.error);
+        fbLogin=findViewById(R.id.fb_login_button);
 
         auth=FirebaseAuth.getInstance();
 
@@ -55,10 +58,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         cbManager= CallbackManager.Factory.create();
 
-        LoginButton fbLogin;
-        fbLogin=findViewById(R.id.fb_login_button);
 
-        fbLogin.setReadPermissions("email","public_profile");
+        fbLogin.setReadPermissions(Arrays.asList(EMAIL));
 
         fbLogin.registerCallback(cbManager, new FacebookCallback<LoginResult>() {
             @Override

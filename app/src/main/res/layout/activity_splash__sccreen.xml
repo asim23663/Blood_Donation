@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.asimyamin.blood_donation.Activity.Splash_Sccreen"
+    tools:context="com.example.asimyamin.blood_donation.Activity.Splash_Screen"
     android:background="@drawable/splash">
 
 </android.support.constraint.ConstraintLayout>

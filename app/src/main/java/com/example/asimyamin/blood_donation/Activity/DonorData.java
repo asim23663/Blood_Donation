@@ -1,25 +1,20 @@
 package com.example.asimyamin.blood_donation.Activity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.view.MenuItemCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.example.asimyamin.blood_donation.Model.DonorInfomation;
 import com.example.asimyamin.blood_donation.Adapter.Donor_Adapter;
+import com.example.asimyamin.blood_donation.Model.DonorInfomation;
 import com.example.asimyamin.blood_donation.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.miguelcatalan.materialsearchview.MaterialSearchView;
 
@@ -81,8 +76,9 @@ public class DonorData extends AddDonorInfo {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent backIntent=new Intent(DonorData.this,Sign_In.class);
-                startActivity(backIntent);
+                Toast.makeText(DonorData.this,"Back",Toast.LENGTH_SHORT).show();
+                /*Intent backIntent=new Intent(DonorData.this,Sign_In.class);
+                startActivity(backIntent);*/
             }
         });
         bar=findViewById(R.id.progressBar);

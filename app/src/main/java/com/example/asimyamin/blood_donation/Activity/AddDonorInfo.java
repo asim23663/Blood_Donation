@@ -1,6 +1,5 @@
 package com.example.asimyamin.blood_donation.Activity;
 
-import android.content.Intent;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,7 +16,6 @@ import com.example.asimyamin.blood_donation.R;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.Objects;
 
 public class AddDonorInfo extends AppCompatActivity {
 

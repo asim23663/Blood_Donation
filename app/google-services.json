@@ -15,7 +15,7 @@
       },
       "oauth_client": [
         {
-          "client_id": "140064611741-bdh206fdrl52e7l0h1f6ef65sgikau76.apps.googleusercontent.com",
+          "client_id": "140064611741-l3n8ht1pk48013gdl9p720m5k0278pko.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.asimyamin.blood_donation",
@@ -23,11 +23,11 @@
           }
         },
         {
-          "client_id": "140064611741-2mpmgte4lncg5hlsm44a6b9c3u94o8r9.apps.googleusercontent.com",
+          "client_id": "140064611741-df6vpp4r5v9sp61htiov1kb69a00gk7k.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.asimyamin.blood_donation",
-            "certificate_hash": "ca9b3ba4838d926dd429e70721d6e0f7df3e2572"
+            "certificate_hash": "f227dfdf2dc35306893ac33d5661b14e07cc64ad"
           }
         },
         {

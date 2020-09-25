@@ -2,10 +2,9 @@ package com.example.asimyamin.blood_donation.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.constraint.ConstraintLayout;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -23,11 +22,13 @@ import com.firebase.ui.auth.ErrorCodes;
 import com.firebase.ui.auth.IdpResponse;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
 
 import java.util.Arrays;
 
@@ -144,7 +145,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         else
         {
             startActivityForResult(AuthUI.getInstance().createSignInIntentBuilder().setAvailableProviders(
-                    Arrays.asList(new AuthUI.IdpConfig.Builder(AuthUI.PHONE_VERIFICATION_PROVIDER).build())
+                    Arrays.asList(new AuthUI.IdpConfig.PhoneBuilder().build())
             ).build(),RC_LOGIN);
         }
 
@@ -175,12 +176,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             Toast.makeText(this,"Canceld",Toast.LENGTH_SHORT).show();
                             return;
                         }
-                        if (response.getErrorCode()== ErrorCodes.NO_NETWORK)
+                        if (response.getError().getErrorCode()== ErrorCodes.NO_NETWORK)
                         {
                             Toast.makeText(this,"No INternet",Toast.LENGTH_SHORT).show();
                             return;
                         }
-                        if (response.getErrorCode()== ErrorCodes.UNKNOWN_ERROR)
+                        if (response.getError().getErrorCode()== ErrorCodes.UNKNOWN_ERROR)
                         {
                             Toast.makeText(this,"Unknown Error!!",Toast.LENGTH_SHORT).show();
                             return;

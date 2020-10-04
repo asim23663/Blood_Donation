@@ -22,8 +22,8 @@
         <item>Queta</item>
     </string-array>
 
-    <string name="facebook_app_id">955858707925233</string>
-    <string name="fb_login_protocol_scheme">fb955858707925233</string>
+    <string name="facebook_app_id">Your_Facebook_Id</string>
+    <string name="fb_login_protocol_scheme">fbFB_Id</string>
     <string name="setting_name">Logout</string>
     <string name="title_activity_landing">LandingActivity</string>
 

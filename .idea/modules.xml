@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Blood_Donation.iml" filepath="$PROJECT_DIR$/Blood_Donation.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Blood_Donationn.iml" filepath="$PROJECT_DIR$/.idea/modules/Blood_Donationn.iml" group="Blood_Donationn" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Blood_Donationn-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Blood_Donationn-app.iml" group="Blood_Donationn/app" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Blood_Donationn.iml" filepath="$PROJECT_DIR$/.idea/modules/Blood_Donationn.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Blood_Donationn.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Blood_Donationn.app.iml" />
     </modules>
   </component>
 </project>

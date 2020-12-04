@@ -2,9 +2,11 @@ package com.example.asimyamin.blood_donation.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -36,28 +38,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private Button logIn;
     private ConstraintLayout error;
-    private final int RC_LOGIN=123;
+    private final int RC_LOGIN = 123;
     private FirebaseAuth auth;
 
     LoginButton fbLogin;
     private CallbackManager cbManager;
 
-    private static final String EMAIL="email";
+    private static final String EMAIL = "email";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
 
-        logIn=findViewById(R.id.logIn);
-        error=findViewById(R.id.error);
-        fbLogin=findViewById(R.id.fb_login_button);
+//        logIn = findViewById(R.id.login_btn_phone_number);
+        error = findViewById(R.id.error);
+        fbLogin = findViewById(R.id.fb_login_button);
 
-        auth=FirebaseAuth.getInstance();
+        auth = FirebaseAuth.getInstance();
 
-        logIn.setOnClickListener(this);
+//        logIn.setOnClickListener(this);
 
-        cbManager= CallbackManager.Factory.create();
+        cbManager = CallbackManager.Factory.create();
 
 
         fbLogin.setReadPermissions(Arrays.asList(EMAIL));
@@ -66,28 +69,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onSuccess(LoginResult loginResult) {
 
-                Toast.makeText(MainActivity.this,"Login Successful!!!!",Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "Login Successful!!!!", Toast.LENGTH_LONG).show();
                 handleFacebookAccessToken(loginResult.getAccessToken());
             }
 
             @Override
             public void onCancel() {
 
-                Toast.makeText(MainActivity.this,"canceled",Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "canceled", Toast.LENGTH_LONG).show();
 
             }
 
             @Override
             public void onError(FacebookException error) {
 
-                Toast.makeText(MainActivity.this,"Internet Failure!!!",Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "Internet Failure!!!", Toast.LENGTH_LONG).show();
 
-                Log.d("Error!!",error.getMessage());
+                Log.d("Error!!", error.getMessage());
             }
         });
 
 
     }
+
     private void handleFacebookAccessToken(AccessToken token) {
 
         AuthCredential credential = FacebookAuthProvider.getCredential(token.getToken());
@@ -116,24 +120,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onStart();
 
 
-
-        if (auth.getCurrentUser() !=null)
-        {
-            FirebaseUser currentUser=auth.getCurrentUser();
+        if (auth.getCurrentUser() != null) {
+            FirebaseUser currentUser = auth.getCurrentUser();
             updateUI(currentUser);
 
         }
     }
 
-    private void updateUI(FirebaseUser user){
-        startActivity(new Intent(this,Sign_In.class));
+    private void updateUI(FirebaseUser user) {
+        startActivity(new Intent(this, Sign_In.class));
         finish();
     }
 
 
-    public void register(){
+    public void register() {
 
-        if (auth.getCurrentUser() !=null) {
+        if (auth.getCurrentUser() != null) {
             //If already Log in..//
             if (!auth.getCurrentUser().getPhoneNumber().isEmpty()) {
                 startActivity(new Intent(this, Sign_In.class)
@@ -141,12 +143,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 finish();
 
             }
-        }
-        else
-        {
+        } else {
             startActivityForResult(AuthUI.getInstance().createSignInIntentBuilder().setAvailableProviders(
                     Arrays.asList(new AuthUI.IdpConfig.PhoneBuilder().build())
-            ).build(),RC_LOGIN);
+            ).build(), RC_LOGIN);
         }
 
     }
@@ -155,48 +155,41 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        cbManager.onActivityResult(requestCode,resultCode,data);
+        cbManager.onActivityResult(requestCode, resultCode, data);
         try {
-            if (requestCode==RC_LOGIN)
-            {
-                IdpResponse response=IdpResponse.fromResultIntent(data);
+            if (requestCode == RC_LOGIN) {
+                IdpResponse response = IdpResponse.fromResultIntent(data);
 
                 /////Succesfully Sign in/////
-                if (resultCode==RESULT_OK)
-                {
+                if (resultCode == RESULT_OK) {
                     if (!auth.getCurrentUser().getPhoneNumber().isEmpty()) {
-                        startActivity(new Intent(this,Sign_In.class).putExtra("phonne",auth.getCurrentUser().getPhoneNumber()));
+                        startActivity(new Intent(this, Sign_In.class).putExtra("phonne", auth.getCurrentUser().getPhoneNumber()));
                         finish();
                         return;
                     }
                     ///If Sign in Failed
                     else {
-                        if (response==null)
-                        {
-                            Toast.makeText(this,"Canceld",Toast.LENGTH_SHORT).show();
+                        if (response == null) {
+                            Toast.makeText(this, "Canceld", Toast.LENGTH_SHORT).show();
                             return;
                         }
-                        if (response.getError().getErrorCode()== ErrorCodes.NO_NETWORK)
-                        {
-                            Toast.makeText(this,"No INternet",Toast.LENGTH_SHORT).show();
+                        if (response.getError().getErrorCode() == ErrorCodes.NO_NETWORK) {
+                            Toast.makeText(this, "No INternet", Toast.LENGTH_SHORT).show();
                             return;
                         }
-                        if (response.getError().getErrorCode()== ErrorCodes.UNKNOWN_ERROR)
-                        {
-                            Toast.makeText(this,"Unknown Error!!",Toast.LENGTH_SHORT).show();
+                        if (response.getError().getErrorCode() == ErrorCodes.UNKNOWN_ERROR) {
+                            Toast.makeText(this, "Unknown Error!!", Toast.LENGTH_SHORT).show();
                             return;
                         }
 
                     }
 
 
-                    Toast.makeText(this,"Unkown Sign in Error!!!",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Unkown Sign in Error!!!", Toast.LENGTH_SHORT).show();
 
-                }
-                else
-                {
-                    Snackbar.make(error,"Internet Failure!!",Snackbar.LENGTH_LONG).show();
-                        //ErrorDialog(this);
+                } else {
+                    Snackbar.make(error, "Internet Failure!!", Snackbar.LENGTH_LONG).show();
+                    //ErrorDialog(this);
 
 
                     //Toast.makeText(this,"Internet Failure",Toast.LENGTH_SHORT).show();
@@ -204,9 +197,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
             }
 
-        }catch (Exception e)
-        {
-            Toast.makeText(this,"Welcome",Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
+            Toast.makeText(this, "Welcome", Toast.LENGTH_SHORT).show();
         }
 
     }
@@ -214,18 +206,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
 
-        switch (v.getId())
-        {
-            case R.id.logIn:
+        /*switch (v.getId()) {
+            case R.id.login_btn_phone_number:
                 register();
 
                 //startActivity(new Intent(this,Sign_In.class));
 
                 break;
-        }
+        }*/
 
     }
-
 
 
 }

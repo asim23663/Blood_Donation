@@ -42,4 +42,26 @@
     <string name="emergency">Emergency</string>
     <string name="todo">TODO</string>
     <string name="login_with_phone_number">Login With Phone Number</string>
+
+    <string name="on_board_str_skip">Skip</string>
+    <string name="on_board_str_get_started">Get started</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="add_a_long_description_here_about_your_app_s_important_feature">Add a long description here about your app\'s important feature.</string>
+    <string name="section_format">Dummy Section</string>
+
+    <string name="be_a_blood_donor">Be A Blood Donor</string>
+    <string name="become_a_blood_donor_save_lives"><![CDATA[Become A Blood Donor & Save Lives]]></string>
+    <string name="user_will_be_able">Users will be able to create a donor account and will be able to save lives.</string>
+    <string name="emergency_mode_is_there">Emergency Mode Is There For You</string>
+    <string name="find_blood_donors"><![CDATA[Find Blood Donors & Request For Blood]]></string>
+    <string name="find_a_donor">Find A Donor</string>
+    <string name="emergency_mode">Emergency Mode</string>
+
+    <string name="in_case_of_emergency">In case of emergency, users will be able to get contact numbers of public account of donors.</string>
+    <string name="users_will_be_able_to_create">Users will be able to create a donor account and will be able to save lives.</string>
+    <string name="on_board_str_back">Back</string>
+
+
 </resources>

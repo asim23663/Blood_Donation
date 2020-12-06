@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.auth.LoginActivity"
+    android:padding="@dimen/padding_normal"
+    >
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_100sdp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/main"
+        app:layout_constraintBottom_toTopOf="@+id/materialCardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView"
+        style="@style/CardViewStyle"
+        android:layout_width="@dimen/_250sdp"
+        android:layout_marginBottom="@dimen/margin_extra_large"
+        app:cardBackgroundColor="@color/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@+id/tvOr"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingStart="@dimen/padding_large"
+            android:paddingTop="@dimen/padding_normal"
+            android:paddingEnd="@dimen/padding_large"
+            android:paddingBottom="@dimen/padding_normal">
+
+            <ImageView
+                android:layout_width="@dimen/img_small_icon_size"
+                android:layout_height="@dimen/img_small_icon_size"
+                android:contentDescription="TODO"
+                android:src="@drawable/ic_phone_android"
+                app:tint="@color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:text="@string/login_with_phone_number"
+                android:textColor="@color/white"
+                android:textSize="@dimen/normal_size" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/tvOr"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_extra_large"
+        android:text="@string/or"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/google_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/fb_login_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginStart="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/google_login"
+        style="@style/CardViewStyle"
+        android:layout_marginEnd="@dimen/margin_large"
+        android:layout_marginBottom="@dimen/margin_large"
+        app:layout_constraintBottom_toTopOf="@+id/login_btn_emergency"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingStart="@dimen/padding_large"
+            android:paddingTop="@dimen/padding_normal"
+            android:paddingEnd="@dimen/padding_large"
+            android:paddingBottom="@dimen/padding_normal">
+
+            <ImageView
+                android:layout_width="@dimen/img_small_icon_size"
+                android:layout_height="@dimen/img_small_icon_size"
+                android:contentDescription="TODO"
+                android:src="@drawable/ic_google" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:text="@string/str_google"
+                android:textSize="@dimen/normal_size" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/fb_login"
+        style="@style/CardViewStyle"
+        android:layout_marginStart="@dimen/margin_large"
+        android:layout_marginBottom="@dimen/margin_large"
+        app:elevation="@dimen/cv_elevation_small"
+        app:layout_constraintBottom_toTopOf="@+id/login_btn_emergency"
+        app:layout_constraintStart_toStartOf="@+id/guideline2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingStart="@dimen/padding_large"
+            android:paddingTop="@dimen/padding_normal"
+            android:paddingEnd="@dimen/padding_large"
+            android:paddingBottom="@dimen/padding_normal">
+
+            <ImageView
+                android:layout_width="@dimen/img_small_icon_size"
+                android:layout_height="@dimen/img_small_icon_size"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/ic_facebook" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small"
+                android:gravity="center"
+                android:text="@string/str_facebook"
+                android:textSize="@dimen/normal_size" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/login_btn_emergency"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="@dimen/_250sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_large"
+        android:text="@string/emergency"
+        app:cornerRadius="@dimen/cv_radius_normal"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

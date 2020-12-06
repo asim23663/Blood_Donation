@@ -30,6 +30,7 @@
     <dimen name="cv_radius_normal">@dimen/_8sdp</dimen>
     <dimen name="cv_radius_large">@dimen/_16sdp</dimen>
     <dimen name="cv_radius_small">@dimen/_4sdp</dimen>
+    <dimen name="cv_elevation_ex_small">@dimen/_2sdp</dimen>
     <dimen name="cv_elevation_small">@dimen/_4sdp</dimen>
     <dimen name="cv_elevation_normal">@dimen/_8sdp</dimen>
     <dimen name="height_30">@dimen/_30sdp</dimen>
@@ -37,4 +38,7 @@
     <dimen name="height_50">@dimen/_50sdp</dimen>
     <dimen name="height_60">@dimen/_60sdp</dimen>
     <dimen name="height_200">@dimen/_200sdp</dimen>
+
+    <dimen name="bottom_nav_margin">@dimen/_48sdp</dimen>
+
 </resources>

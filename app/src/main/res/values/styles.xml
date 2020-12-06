@@ -20,7 +20,7 @@
         <item name="android:clickable">true</item>
         <item name="android:focusable">true</item>
         <item name="cardCornerRadius">@dimen/cv_radius_normal</item>
-        <item name="cardElevation">@dimen/cv_elevation_small</item>
+        <item name="cardElevation">@dimen/cv_elevation_ex_small</item>
     </style>
 
 
